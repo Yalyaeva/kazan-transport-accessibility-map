@@ -795,7 +795,7 @@ Promise.allSettled(layersToLoad.map((item) => item.load().then(() => overlayMeta
     if (boundsLayers.length) {
       const group = L.featureGroup(boundsLayers);
       map.fitBounds(group.getBounds().pad(0.03));
-      map.setZoom(12);
+      map.setZoom(8);
     }
 
     if (failed.length) {
