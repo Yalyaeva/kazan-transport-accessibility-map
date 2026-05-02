@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Транспортная обеспеченность Казани</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@3.0.0/Control.FullScreen.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.mouseposition@1.0.1/src/L.Control.MousePosition.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="about-widget">
+    <button id="about-toggle" type="button" title="О проекте">О проекте</button>
+    <div id="about-panel" class="hidden">
+      <button id="about-close" type="button" title="Закрыть">×</button>
+      <div class="about-title">О проекте</div>
+      <div class="about-text">
+        Эта веб-карта посвящена анализу транспортной обеспеченности территории Казани.
+        На карте представлены объекты транспортной инфраструктуры, зоны нормативной доступности,
+        кластеры и аналитические слои, позволяющие оценить обеспеченность общественным транспортом
+        и велопарковками. Отдельное внимание уделено выявлению жилых территорий, находящихся вне
+        нормативных зон доступности.
+      </div>
+    </div>
+  </div>
+
+  <div id="echpochmak-widget">
+    <button id="echpochmak-btn" type="button" title="Факт от Эчпочмака">
+      <img src="img/echpochmak.png" alt="Эчпочмак">
+    </button>
+    <div id="echpochmak-popup" class="hidden">
+      <button id="echpochmak-close" type="button" title="Закрыть">×</button>
+      <div class="echpochmak-title">Факт от Эчпочмака</div>
+      <div id="echpochmak-text"></div>
+    </div>
+  </div>
+
+  <div id="map-footer">
+    Техническое описание проекта и исходный код:
+    <a id="github-link" href="PUT_GITHUB_LINK_HERE" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.fullscreen@3.0.0/Control.FullScreen.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.mouseposition@1.0.1/src/L.Control.MousePosition.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

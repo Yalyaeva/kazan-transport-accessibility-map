@@ -1,0 +1,543 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  background: #eef1ee;
+}
+
+.leaflet-control.custom-layer-tree {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  max-height: 72vh;
+  overflow: auto;
+  width: 310px;
+}
+
+.custom-layer-tree h3 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.layer-group {
+  margin-bottom: 8px;
+  border-top: 1px solid #ececec;
+  padding-top: 8px;
+}
+
+.layer-group:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.layer-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  user-select: none;
+  gap: 12px;
+}
+
+.layer-group-title .caret {
+  font-size: 12px;
+  color: #666;
+  width: 14px;
+  text-align: center;
+}
+
+.layer-group-content {
+  margin-top: 8px;
+  padding-left: 6px;
+}
+
+.layer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 6px 0;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.layer-item input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.legend-note {
+  font-size: 11px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.popup-content {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.popup-content p {
+  margin: 0 0 6px;
+}
+
+.popup-content p:last-child {
+  margin-bottom: 0;
+}
+
+.icon-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-marker svg {
+  overflow: visible;
+}
+
+.leaflet-control-attribution {
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .leaflet-control.custom-layer-tree {
+    width: 265px;
+    max-height: 62vh;
+  }
+}
+
+.leaflet-bottom.leaflet-right .leaflet-control:not(.leaflet-control-minimap) {
+  margin-bottom: 6px;
+}
+
+
+
+#echpochmak-widget {
+  position: absolute;
+  left: 14px;
+  top: 58%;
+  transform: translateY(-50%);
+  z-index: 2000;
+}
+
+#echpochmak-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+#echpochmak-btn img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border: 2px solid #d49a5e;
+  background: #fff8ef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease;
+}
+
+#echpochmak-btn img:hover {
+  transform: scale(1.05);
+}
+
+#echpochmak-popup {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  padding: 14px 36px 14px 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  z-index: 2001;
+}
+
+#echpochmak-popup.hidden {
+  display: none;
+}
+
+#echpochmak-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.echpochmak-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#echpochmak-text {
+  color: #2a2a2a;
+}
+
+@media (max-width: 768px) {
+  #echpochmak-widget {
+    left: 10px;
+    top: 64%;
+  }
+
+  #echpochmak-btn img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #echpochmak-popup {
+    width: 220px;
+    left: 70px;
+  }
+}
+
+
+
+#music-widget {
+  position: absolute;
+  left: 16px;
+  top: calc(58% + 92px);
+  z-index: 2000;
+}
+
+#music-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  color: #7a4f1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#music-btn:hover {
+  transform: scale(1.04);
+}
+
+#music-popup {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  padding: 14px 36px 14px 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  z-index: 2001;
+}
+
+#music-popup.hidden {
+  display: none;
+}
+
+#music-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.music-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  #music-widget {
+    left: 12px;
+    top: calc(64% + 78px);
+  }
+
+  #music-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  #music-popup {
+    width: 220px;
+    left: 70px;
+    top: calc(64% + 78px);
+  }
+}
+
+
+#echpochmak-btn, #music-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+#music-widget {
+  display: none !important;
+}
+
+#about-widget {
+  position: absolute !important;
+  left: 18px !important;
+  bottom: 190px !important;
+  z-index: 3100 !important;
+}
+
+#about-toggle {
+  display: inline-block !important;
+  min-width: 122px !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,0.96) !important;
+  color: #222 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16) !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+#about-panel {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: calc(100% + 10px) !important;
+  width: 360px !important;
+  background: rgba(255,255,255,0.97) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+  padding: 14px 40px 14px 16px !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  z-index: 3101 !important;
+}
+
+#about-panel.hidden {
+  display: none !important;
+}
+
+#about-close {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  border: none !important;
+  background: transparent !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+}
+
+.about-title {
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  font-size: 15px !important;
+}
+
+.about-text {
+  color: #2a2a2a !important;
+}
+
+#echpochmak-widget {
+  position: absolute !important;
+  left: 34px !important;
+  bottom: 72px !important;
+  top: auto !important;
+  transform: none !important;
+  z-index: 3100 !important;
+}
+
+#echpochmak-btn {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  display: block !important;
+}
+
+#echpochmak-btn img {
+  width: 82px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  clip-path: none !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18)) !important;
+}
+
+#echpochmak-popup {
+  position: absolute !important;
+  left: 96px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 305px !important;
+  background: rgba(255,255,255,0.97) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+  padding: 14px 36px 14px 14px !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  z-index: 3101 !important;
+}
+
+#echpochmak-popup.hidden {
+  display: none !important;
+}
+
+.echpochmak-title {
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  font-size: 15px !important;
+}
+
+#echpochmak-text {
+  color: #2a2a2a !important;
+}
+
+#map-footer {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 10px !important;
+  transform: translateX(-50%) !important;
+  z-index: 2500 !important;
+  background: rgba(255,255,255,0.94) !important;
+  border-radius: 10px !important;
+  padding: 7px 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #333 !important;
+  white-space: nowrap !important;
+}
+
+#map-footer a {
+  color: #1a73e8 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+#map-footer a:hover {
+  text-decoration: underline !important;
+}
+
+@media (max-width: 768px) {
+  #about-widget {
+    left: 14px !important;
+    bottom: 154px !important;
+  }
+
+  #about-panel {
+    width: 240px !important;
+  }
+
+  #echpochmak-widget {
+    left: 18px !important;
+    bottom: 58px !important;
+  }
+
+  #echpochmak-btn img {
+    width: 72px !important;
+  }
+
+  #echpochmak-popup {
+    width: 220px !important;
+    left: 78px !important;
+  }
+
+  #map-footer {
+    white-space: normal !important;
+    width: calc(100% - 24px) !important;
+    text-align: center !important;
+  }
+}
+
+.map-legend {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+  padding: 10px 12px;
+  width: 250px;
+  max-height: 38vh;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.map-legend.hidden {
+  display: none;
+}
+
+.map-legend .legend-section + .legend-section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ececec;
+}
+
+.map-legend .legend-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.map-legend .legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.map-legend .legend-swatch {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(0,0,0,0.35);
+  box-sizing: border-box;
+  flex: 0 0 16px;
+}
+
+.map-legend .legend-swatch.line {
+  height: 0;
+  border: none;
+  border-top: 4px solid #999;
+  width: 18px;
+}
+
+.map-legend .legend-swatch.circle {
+  border-radius: 50%;
+  background: rgba(69,126,78,0.55);
+}
+
+.map-legend .legend-note-small {
+  color: #666;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .map-legend {
+    width: 210px;
+    max-height: 32vh;
+    font-size: 11px;
+  }
+}
