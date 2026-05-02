@@ -324,7 +324,7 @@ html, body {
   position: absolute !important;
   left: 0 !important;
   bottom: calc(100% + 10px) !important;
-  width: 365px !important;
+  width: 500px !important;
   min-height: 260px !important;
   background: rgba(255,255,255,0.97) !important;
   border-radius: 12px !important;
